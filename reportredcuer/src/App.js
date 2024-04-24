@@ -1,12 +1,16 @@
-
 import './App.css';
+import NavbarComp from "./components/Navbar"
+import MainCard from './components/MainCard'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Report Reducer</p>
-      </header>
+      <NavbarComp />
+      <div className="app-content">
+        <div className="card-components">
+          <MainCard />
+        </div>
+      </div>
     </div>
   );
 }
