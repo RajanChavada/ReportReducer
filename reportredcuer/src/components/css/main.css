@@ -1,0 +1,19 @@
+.document-adder button {
+    background-color: white;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    width: 30%;
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    border-radius: 20px;
+    outline: 0;
+}
+
+
+.document-adder button:hover { 
+    background-color: rgb(167, 161, 161); ;
+    outline: 0;
+}
+
