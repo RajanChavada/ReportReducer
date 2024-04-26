@@ -23,7 +23,12 @@ export default function MainCard() {
   // handle submit axios
   function handleSubmit(e) { 
     e.preventDefault(); 
-    const url = 'http://localhost:300/uploadFile'
+    if (!file) {
+      console.error('No file selected');
+      return;
+    }
+  
+    const url = 'http://127.0.0.1:5000/uploadFile';
     const formData = new FormData(); 
     formData.append('file', file); 
     formData.append('fileName', file.name); 
@@ -32,12 +37,16 @@ export default function MainCard() {
         'content-type': 'multipart/form-data',
       },
     }; 
-
-    axios.post(url, formData, config).then((response) => {
-      console.log(response.data); 
-    })
-
+  
+    axios.post(url, formData, config)
+      .then((response) => {
+        console.log(response.data); 
+      })
+      .catch((error) => {
+        console.error('Error uploading file:', error);
+      });
   }
+  
 
   return (
     <div>
