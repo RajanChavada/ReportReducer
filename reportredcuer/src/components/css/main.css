@@ -1,19 +1,36 @@
+.document-adder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .document-adder button {
     background-color: white;
     opacity: 0.5;
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
+    justify-content: center;
+    align-items: center;
     width: 30%;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
     padding: 20px;
     border-radius: 20px;
     outline: 0;
 }
 
-
-.document-adder button:hover { 
-    background-color: rgb(167, 161, 161); ;
-    outline: 0;
+.document-adder h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.document-adder input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.document-adder button:hover {
+    background-color: rgb(167, 161, 161);
+    outline: 0;
+}
