@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './css/main.css'
+import './css/main.css';
 
 export default function MainCard() {
   const [file, setFile] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+
     if (!file) {
-      console.error('No file selected');
+      setError('No file selected');
       return;
     }
 
@@ -27,7 +30,8 @@ export default function MainCard() {
 
       console.log(response.data);
     } catch (error) {
-      console.error('Error uploading file:', error);
+      console.log(error)
+      setError('Error uploading file: ' + error.message);
     }
   };
 
@@ -35,20 +39,23 @@ export default function MainCard() {
     <div className='document-adder'>
       <h1>Report Reducer</h1>
       <hr></hr>
-      <input 
-      type="file" 
-      onChange={handleFileChange} 
-      style={{ 
-        backgroundColor: 'white', 
-        opacity: 0.5, 
-        borderRadius: 100, 
-        padding: 20, 
-        margin: 20,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center' }} 
-      />
-      <button onClick={handleSubmit}>Upload File</button>
+      <form onSubmit={handleSubmit}>
+        <input 
+          type="file" 
+          onChange={handleFileChange} 
+          style={{ 
+            backgroundColor: 'white', 
+            opacity: 0.5, 
+            borderRadius: 100, 
+            padding: 20, 
+            margin: 20,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center' }} 
+        />
+        {error && <div style={{ color: 'red' }}>{error}</div>}
+        <button type="submit" disabled={!file}>Upload File</button>
+      </form>
     </div>
   );
 }
