@@ -11,12 +11,28 @@
 .card-components { 
   background-color: rgb(182, 178, 178);
   color: black;
-  width: 50%; /* Adjust the width as needed */
+  width: 75%; /* Adjust the width as needed */
   margin: 0 auto; /* Set left and right margins to auto to center horizontally */
   display: flex;
   justify-content: center;
   border-radius: 20px;
   padding: 20px;
+  opacity: 0.8;
+  box-shadow: 1px 1px 1px 1px;
 
 }
+
+.output {
+  background-color: rgb(182, 178, 178);
+  color: black;
+  width: 75%; /* Adjust the width as needed */
+  margin: 0 auto; /* Set left and right margins to auto to center horizontally */
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 100px;
+  padding: 20px;
+  opacity: 0.8;
+  box-shadow: 1px 1px 1px 1px;
+ }
 

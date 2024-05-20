@@ -16,6 +16,7 @@
     padding: 20px;
     border-radius: 20px;
     outline: 0;
+    color: black;
 }
 
 .document-adder h1 {
@@ -34,3 +35,4 @@
     background-color: rgb(167, 161, 161);
     outline: 0;
 }
+

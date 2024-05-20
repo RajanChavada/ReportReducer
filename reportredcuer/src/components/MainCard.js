@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './css/main.css';
 
+
 export default function MainCard() {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
@@ -36,26 +37,29 @@ export default function MainCard() {
   };
 
   return (
-    <div className='document-adder'>
-      <h1>Report Reducer</h1>
-      <hr></hr>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="file" 
-          onChange={handleFileChange} 
-          style={{ 
-            backgroundColor: 'white', 
-            opacity: 0.5, 
-            borderRadius: 100, 
-            padding: 20, 
-            margin: 20,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center' }} 
-        />
-        {error && <div style={{ color: 'red' }}>{error}</div>}
-        <button type="submit" disabled={!file}>Upload File</button>
-      </form>
+    <div >
+      <div className='document-adder'>
+        <h1>Report Reducer</h1>
+        <hr></hr>
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="file" 
+            onChange={handleFileChange} 
+            style={{ 
+              backgroundColor: 'white', 
+              opacity: 0.5, 
+              borderRadius: 100, 
+              padding: 20, 
+              margin: 20,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center' }} 
+          />
+          {error && <div style={{ color: 'red' }}>{error}</div>}
+          <button type="submit" disabled={!file}>Upload File</button>
+        </form>
+      </div>
+      
     </div>
   );
 }
