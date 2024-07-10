@@ -3,7 +3,7 @@ import axios from 'axios';
 import './css/main.css';
 
 
-export default function MainCard() {
+export default function MainCard( {onOutputChange}) {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
 
@@ -29,7 +29,8 @@ export default function MainCard() {
         }
       });
 
-      console.log(response.data);
+      console.log(response.data.output);
+      onOutputChange(response.data.output)
     } catch (error) {
       console.log(error)
       setError('Error uploading file: ' + error.message);
@@ -59,7 +60,6 @@ export default function MainCard() {
           <button type="submit" disabled={!file}>Upload File</button>
         </form>
       </div>
-      
     </div>
   );
 }

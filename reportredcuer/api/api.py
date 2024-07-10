@@ -58,6 +58,7 @@ def upload_file():
             "message": "File uploaded successfully",
             "num_pages": num_pages,
             "extracted_text": extracted_text_combined,
+            "output": response
         })
     except Exception as e:
         print('Error:', str(e))
